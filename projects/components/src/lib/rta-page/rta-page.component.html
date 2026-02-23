@@ -1,0 +1,20 @@
+<div class="alert-dashboard">
+  <!-- Left Panel: Alert details, vehicle/driver info, images -->
+  <div class="panel panel-left">
+    <app-alert-left-panel
+      [alertDetails]="alertData.alertDetails"
+      [vehicleDetails]="alertData.vehicleDetails"
+      [driverDetails]="alertData.driverDetails"
+      [imageDetails]="alertData.imageDetails">
+    </app-alert-left-panel>
+  </div>
+
+  <!-- Right Panel: Map, video, actions -->
+  <div class="panel panel-right">
+    <app-alert-right-panel
+      [location]="alertData.location"
+      [videoDetails]="alertData.videoDetails"
+      (actionTaken)="onActionTaken($event)">
+    </app-alert-right-panel>
+  </div>
+</div>
