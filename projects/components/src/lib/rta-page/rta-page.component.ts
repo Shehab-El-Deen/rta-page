@@ -54,7 +54,9 @@ export class RtaPageComponent implements OnInit {
 
   constructor() {
   }
-ngOnInit(): void {}
+ngOnInit(): void {
+  this.pageModel.data['company'] = 'RTA Alert Details';
+}
 
   onActionTaken(action: AlertAction): void {
     console.log('Action triggered:', action);

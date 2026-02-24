@@ -6,7 +6,7 @@
 }
 
 .card {
-  background: #f4f5f9;
+  background: #F5F5F5;
   border: 1px solid #e8eaf0;
   border-radius: 8px;
   padding: 18px 20px;
@@ -178,12 +178,13 @@
 
 .vid-action-buttons .vid-action-btn {
   flex: 1;
-  padding: 8px 8px;
-  background: #a19e9e59;
-  /* border: 1px solid rgba(255, 255, 255, 0.6); */
-  border-radius: 4px;
-  color: #ffffff;
-  font-size: 12px;
+  padding: 8px 12px;
+  height: 40px;
+  background: #E7E7E7;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
