@@ -4,13 +4,35 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 1fr; 
   gap: 20px;
-  padding: 20px;
   min-height: 100vh;
   background-color: #ffffff;
   box-sizing: border-box;
 }
+
 .panel {
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
+
+.loading-container,
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.loading-container {
+  color: #666;
+}
+
+.error-container {
+  background-color: #ffebee;
+}
+
+.error-message {
+  color: #c62828;
+  margin: 0;}

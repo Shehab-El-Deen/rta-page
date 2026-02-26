@@ -1,7 +1,7 @@
 <div class="alert-dashboard">
   <!-- Left Panel: Alert details, vehicle/driver info, images -->
-  <div class="panel panel-left">
-    <app-alert-left-panel
+  <div class="panel panel-left" *ngIf="alertData">
+    <app-alert-left-panel 
       [alertDetails]="alertData.alertDetails"
       [vehicleDetails]="alertData.vehicleDetails"
       [driverDetails]="alertData.driverDetails"
@@ -10,7 +10,7 @@
   </div>
 
   <!-- Right Panel: Map, video, actions -->
-  <div class="panel panel-right">
+  <div class="panel panel-right" *ngIf="alertData">
     <app-alert-right-panel
       [location]="alertData.location"
       [videoDetails]="alertData.videoDetails"
