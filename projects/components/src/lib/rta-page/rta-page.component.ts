@@ -26,7 +26,37 @@ export class RtaPageComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.loadFromPageModel();
-  }
+    this.rtaApiService.company.subscribe(company => {
+      console.log("Received company update in RtaPageComponent:", company);
+      this.pageModel.data['company'] = company;
+  })
+   this.rtaApiService.sideNumber.subscribe(n => {
+    console.log('side number →', n);
+    this.pageModel.data['side_number'] = n;
+  });
+
+  this.rtaApiService.plateNumber.subscribe(p => {
+    console.log('plate number →', p);
+    this.pageModel.data['plate_number'] = p;
+  });
+
+  this.rtaApiService.staffId.subscribe(s => {
+    console.log('staff id →', s);
+    this.pageModel.data['driver_staff_id'] = s;
+  });
+
+  this.rtaApiService.permitId.subscribe(p => {
+    console.log('permit id →', p);
+    this.pageModel.data['driver_permit_iD'] = p;
+  });
+
+  this.rtaApiService.driverName.subscribe(d => {
+    console.log('driver name →', d);
+    this.pageModel.data['driver_name'] = d;
+  });
+  
+  console.log("CONTROL API:", this.controlApi);
+}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['pageModel'] && this.pageModel) {

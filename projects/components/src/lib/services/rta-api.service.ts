@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PageModel } from '@sassoftware/vi-api/page-model';
 import { AlertData } from '../alert.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,13 @@ import { AlertData } from '../alert.model';
 export class RtaApiService {
 
   constructor() {}
+
+  company = new Subject<string>();
+  sideNumber = new Subject<string>();
+  plateNumber = new Subject<string>();
+  staffId = new Subject<string>();
+  permitId = new Subject<string>()
+  driverName = new Subject<string>();
 
   /**
    * Extracts alert data directly from pageModel.data 
@@ -17,8 +25,8 @@ export class RtaApiService {
 
     return {
       alertDetails: {
-        title: data['alert_title'] || '',
-        timestamp: data['timestamp'] || ''
+        title: data['alert_details'] || '',
+        timestamp: data['alert_timestamp'] || ''
       },
       vehicleDetails: {
         company: data['company'] || '',
